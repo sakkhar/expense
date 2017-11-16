@@ -11,6 +11,5 @@ class Expense(models.Model):
     expense_amount  = models.FloatField(null=True, help_text="Enter expense amount")
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
-    def get_absolute_url(self):
-        return reverse('expense details', args=[str(self.id)])
-
+    def __str__(self):
+        return self.expense_details
